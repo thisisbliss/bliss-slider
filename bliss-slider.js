@@ -14,19 +14,26 @@
                         $nextslide = $('.slide-nav .next'),
                         $prevslide = $('.slide-nav .prev') ]
 
+    //For sliding to previous/next slides
     function slideNav(sliderArray, direction) {
 
+        //Get the index of the active slide
         var i = $slider.find('li.active').index();
 
+        //Remove active class of said slide and fade out
         $slide.eq(i).removeClass('active').fadeOut(transitionTime);
+        
+        //Do the same with markers -fade out
         $slidemarker.eq(i).removeClass('active');
 
+        //A little logic for sliding
         if(direction == 'next') {
             if(!(i++ < $slide.last().index())) i = 0;
         } else if(direction == 'prev') {
             if(!(i-- > 0)) i = 2;
         }
 
+        //Fade in the next slide and add the active class
         $slide.eq(i).fadeIn(transitionTime);
         $slide.eq(i).addClass('active');
         $slidemarker.eq(i).addClass('active');
@@ -43,13 +50,16 @@
     function sliderAutoPlay(auto) {
         if(auto) {
             $interval = setInterval(function() {
+                //Auto play the slider if the curosr isn't hovered over the slide image
                 if(!$sliderElem.hasClass('hover')) nextSlide(sliderArray);
             }, transitionTime + timeBetweenSlides);
         }
     }
 
     function displaySlide(sliderArray, slideid) {
+        //Disable autoplay
         clearInterval($interval);
+        
         $slide.removeClass('active');
         $slidemarker.removeClass('active');
 
