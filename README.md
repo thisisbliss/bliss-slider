@@ -12,9 +12,10 @@ Now a plugin! :D
 Features
 --------
 
+- Responsive
 - Autoplay
 - Previous/Next links
-- Slider markers (What are these called?)
+- Slider markers
 
 Just call the blissSlider function like so:
 
