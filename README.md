@@ -21,8 +21,8 @@ Just call the blissSlider function like so:
 ```javascript
 $("#slider").blissSlider({
 	auto: 1,
-		transitionTime: 500,
-		timeBetweenSlides: 4000
+	transitionTime: 500,
+	timeBetweenSlides: 4000
 });
 ```
 
