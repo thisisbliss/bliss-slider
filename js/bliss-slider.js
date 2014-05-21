@@ -32,6 +32,7 @@
 			this.sliderArray = [ $sliderContainer = $(this.element),
 									$slider = $sliderContainer.find('.slider'),
 		                        	$slide = $slider.find('.slide'), 
+		                        	$slidebg = $slide.find('.slide-bg img'), 
 		                        	$slidemarkers = $sliderContainer.find('.slide-list'),
 		                        	$slidemarker = $slidemarkers.find('li'),
 		                        	$nextslide = $sliderContainer.find('.slide-nav .next'),
@@ -42,6 +43,10 @@
 
 		Plugin.prototype = {
 			init: function () {
+
+				$sliderContainer.css({
+	        		height: $slidebg.height()+'px'
+	        	});
 
 		        $slide.fadeOut()
 		              .first()
@@ -77,6 +82,15 @@
 		        	e.preventDefault();
 		            clearInterval($interval);
 		            self.prevSlide(self.sliderArray);
+		        });
+
+		        $(window).resize(function() {
+		        	if($slidebg.height() > 0) {
+		        		clearInterval($interval);
+		        		$sliderContainer.css({
+			        		height: $slidebg.height()+'px'
+			        	});
+		        	}
 		        });
 
 			},
