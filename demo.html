@@ -1,30 +1,70 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<title>jQuery Boilerplate</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bliss-slider.css">
+	<script type="text/javascript" src="js/bliss-slider.js"></script>
+</head>
 <body>
+	<div id="slider" class="slider-container">
+		<ul class="slider">
+			<li class="slide">
+				<div class="slide-bg">
+					<img src="img/image1.jpg" alt="An Image" draggable="false">
+				</div>
+				<div class="slide-content">
+					<h2>Header 1</h2>
+					<p>An example paragraph 1</p>
+					<a href="#">Call to action 1</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-bg">
+					<img src="img/image2.jpg" alt="An Image" draggable="false">
+				</div>
+				<div class="slide-content">
+					<h2>Header 2</h2>
+					<p>An example paragraph 2</p>
+					<a href="#">Call to action 2</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-bg">
+					<img src="img/image3.jpg" alt="An Image" draggable="false">
+				</div>
+				<div class="slide-content">
+					<h2>Header 3</h2>
+					<p>An example paragraph 3</p>
+					<a href="#">Call to action 3</a>
+				</div>
+			</li>
+		</ul>
+		<div class="slider-controls">
+			<div class="slide-nav">
+				<a href="#" class="prev">Prev</a>
+				<a href="#" class="next">Next</a>
+			</div>
+			<ul class="slide-list">
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+			</ul>
+		</div>
+	</div>
 
-  <ul class="slider">
-    <li>
-      <div class="floatleft">
-        <img src="animage.jpg" alt="An Image">
-      </div>
-      <div class="floatright">
-        <h3>A header</h3>
-        <p>A little paragraph</p>
-      </div>
-    </li>
-    
-  </ul>
-  <div id="slider-controls">
-    <ul class="slide-nav">
-      <li class="prev">Prev</li>
-      <li class="next">Next</li>
-    </ul>
-    <!-- At the moment you have to add the markers yourself -->
-    <ul class="slide-list">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-  </div>
+	<div id="element"></div>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#slider").blissSlider({
+				auto: 1,
+      			transitionTime: 500,
+      			timeBetweenSlides: 4000
+			});
+		});
+	</script>
 
 </body>
 </html>
