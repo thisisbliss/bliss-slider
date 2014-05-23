@@ -85,12 +85,10 @@
 		        });
 
 		        $(window).resize(function() {
-		        	if($slidebg.height() > 0) {
-		        		clearInterval($interval);
-		        		$sliderContainer.css({
-			        		height: $slidebg.height()+'px'
-			        	});
-		        	}
+	        		clearInterval($interval);
+	        		$sliderContainer.css({
+		        		height: $slide.height()+'px'
+		        	});
 		        });
 
 			},
